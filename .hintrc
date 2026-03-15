@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "meta-viewport": "on",
+    "button-type": "on",
+    "axe/keyboard": [
+      "off",
+      {
+        "nested-interactive": "off"
+      }
+    ]
+  }
+}

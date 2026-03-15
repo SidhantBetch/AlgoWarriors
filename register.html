@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Account - AlgoWarrior</title>
+<link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+<nav class="navbar">
+
+    <!-- Logo -->
+    <div class="logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">Algo<span class="highlight">Warrior</span></span>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="About/index.html">About</a></li>
+        <li><a href="Dashboard/index.html">Dashboard</a></li>
+        <li><a href="Jobs/index.html">Jobs</a></li>
+        <li><a href="Contact/index.html">Contact</a></li>
+    </ul>
+
+    <!-- User Section -->
+    <div class="user-section">
+        <div class="profile">
+            <span class="profile-icon">D</span>
+            <span>dishsd</span>
+        </div>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+</nav>
+<div class="register-container">
+
+    <h1>Create Account</h1>
+    <p class="subtitle">Join the algorithmic recruitment revolution</p>
+
+    <div class="role-select">
+
+        <button class="role active">Candidate</button>
+        <button class="role" onclick="window.location.href='Recruiter.html'">Recruiter</button>
+
+    </div>
+
+    <form id="registerForm" onsubmit="handleRegister(event, 'candidate')">
+
+        <div id="errorMsg" style="color: #ef4444; margin-bottom: 10px; display: none;"></div>
+
+        <label>Full Name</label>
+        <input type="text" id="regName" placeholder="John Doe" required>
+
+        <label>Email Address</label>
+        <input type="email" id="regEmail" placeholder="name@example.com" required>
+
+        <label>Password (Min 6 chars)</label>
+        <input type="password" id="regPassword" placeholder="••••••••" required minlength="6">
+
+        <button type="submit" class="signup-btn" id="regBtn">Sign Up</button>
+
+        <p style="text-align: center; margin-top: 15px; color: #94a3b8;">Already have an account? <a href="login.html" style="color: #0ea5e9;">Log in</a></p>
+
+    </form>
+
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

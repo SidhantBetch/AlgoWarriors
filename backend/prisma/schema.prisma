@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("candidate") // "candidate" or "recruiter"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  jobs       Job[]       @relation("RecruiterJobs")
+  interviews Interview[] @relation("CandidateInterviews")
+}
+
+model Job {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  skills      String[]
+  difficulty  String   @default("medium") // "easy", "medium", "hard"
+  recruiterId String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  recruiter User        @relation("RecruiterJobs", fields: [recruiterId], references: [id])
+  interviews Interview[]
+  questions  Question[]
+}
+
+model Question {
+  id             String   @id @default(uuid())
+  jobId          String
+  type           String   // "mcq", "coding", "conceptual"
+  content        String
+  options        String[] // Only for MCQ
+  correct_answer String?
+  test_cases     Json?    // Optional JSON for coding test cases [{input: "a", expected_output: "b"}]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  job         Job          @relation(fields: [jobId], references: [id])
+  submissions Submission[]
+
+  Interview   Interview? @relation(fields: [interviewId], references: [id])
+  interviewId String?
+}
+
+model Interview {
+  id          String   @id @default(uuid())
+  candidateId String
+  jobId       String
+  status      String   @default("pending") // "pending", "in_progress", "completed"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  candidate User       @relation("CandidateInterviews", fields: [candidateId], references: [id])
+  job       Job        @relation(fields: [jobId], references: [id])
+  questions Question[] 
+
+  submissions Submission[]
+  result      Result?
+}
+
+model Submission {
+  id          String   @id @default(uuid())
+  interviewId String
+  questionId  String
+  answer      String
+  score       Int      @default(0)
+  feedback    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  interview Interview @relation(fields: [interviewId], references: [id])
+  question  Question  @relation(fields: [questionId], references: [id])
+}
+
+model Result {
+  id             String   @id @default(uuid())
+  interviewId    String   @unique
+  totalScore     Int
+  strengths      String[]
+  weaknesses     String[]
+  recommendation String   // "strong_hire", "hire", "weak_hire", "no_hire"
+  report         String?  // Detailed text report
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  interview Interview @relation(fields: [interviewId], references: [id])
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+
+    <!-- Logo -->
+    <div class="logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">Algo<span class="highlight">Warrior</span></span>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../About/index.html">About</a></li>
+        <li><a class="active" href="index.html">Dashboard</a></li>
+        <li><a href="../Jobs/index.html">Jobs</a></li>
+        <li><a href="../Contact/index.html">Contact</a></li>
+    </ul>
+
+    <!-- User Section -->
+    <div class="user-section">
+        <div class="profile">
+            <span class="profile-icon">P</span>
+            <span>Profile</span>
+        </div>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+</nav>
+
+
+
+
+<h1>Applicant Dashboard</h1>
+
+  <div class="dashboard">
+    <!-- Rank -->
+    <div class="card">
+      <h2>Your Rank</h2>
+      <div class="rank">#12</div>
+      <p style="text-align:center; color:#aaa;">Among 150 applicants</p>
+    </div>
+
+    <!-- Jobs Applied -->
+    <div class="card">
+      <h2>Jobs Applied</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Frontend Developer</td>
+            <td>10 Mar 2026</td>
+            <td class="status-pending">Pending</td>
+          </tr>
+          <tr>
+            <td>Backend Developer</td>
+            <td>8 Mar 2026</td>
+            <td class="status-done">Evaluated</td>
+          </tr>
+          <tr>
+            <td>Data Scientist</td>
+            <td>5 Mar 2026</td>
+            <td class="status-rejected">Rejected</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Candidate Evaluation Scores -->
+    <div class="card">
+      <h2>Evaluation Scores</h2>
+      <p>MCQ Test: <span class="score">85%</span></p>
+      <p>NAT Test: <span class="score">78%</span></p>
+      <p>Technical Round: <span class="score">82%</span></p>
+      <p>HR Round: <span class="score">90%</span></p>
+    </div>
+
+    <!-- Overall Evaluation -->
+    <div class="card">
+      <h2>Overall Evaluation</h2>
+      <div class="overall">
+        <p>Total Jobs Applied: <strong>3</strong></p>
+        <p>Total Evaluations Completed: <strong>2</strong></p>
+        <p>Overall Score: <strong>84%</strong></p>
+        <p>Status: <span style="color:#00ff88;">Shortlisted</span></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<script src="../script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Logo Section -->
+            <div class="footer-about">
+                <h2 class="footer_Algo">Algo<span>Warrior</span></h2>
+                <p>
+                    The intelligent enterprise recruitment simulation platform.
+                    AI-powered dynamic question generation and automated evaluation.
+                </p>
+            </div>
+
+            <!-- Platform Links -->
+            <div class="footer-links">
+                <h3 class="footer_Platform">Platform</h3>
+                <a href="#">About Us</a>
+                <a href="#">Browse Roles</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="footer-links">
+                <h3 class="Footer_Legal">Legal</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 AlgoWarrior. All rights reserved.
+        </div>
+
+    </footer>
+</body>
+</html>
