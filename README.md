@@ -12,4 +12,4 @@ AlgoWarriors is a dynamic team dedicated to mastering competitive programming an
 We welcome contributions from fellow programmers! If you have a solution to a problem, an innovative project idea, or an improvement to existing code, please feel free to fork the repository and submit a pull request. Let's collaborate and grow together as AlgoWarriors!
 
 ## Contact
-For any inquiries or collaborations, please reach out to us at [
+For any inquiries or collaborations, please reach out to us at 
