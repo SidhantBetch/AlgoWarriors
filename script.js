@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // API Base URL
 const API_URL = 'http://localhost:3000/api';
 
@@ -108,3 +109,16 @@ function startSimulation(){
 function howItWorks(){
     alert("AlgoWarrior uses AI to generate custom technical questions based on the job requirements, and evaluates your answers instantly!");
 }
+=======
+function startSimulation(){
+    window.location.href = "register.html";
+}
+
+function howItWorks(){
+    alert("Here you will explain how AlgoWarrior works.");
+}
+
+function logout(){
+    alert("Logged out successfully!");
+}
+>>>>>>> fafb58bff4022070199ab4e6d30f510abb35612b
