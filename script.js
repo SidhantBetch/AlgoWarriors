@@ -92,7 +92,13 @@ async function handleLogin(event) {
 function logout() {
     localStorage.removeItem('aw_token');
     localStorage.removeItem('aw_user');
-    window.location.href = '../index.html';
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const currentDir = pathParts[pathParts.length - 2] || '';
+    if (currentDir === 'AlgoWarriors' || currentDir === '') {
+        window.location.href = 'index.html';
+    } else {
+        window.location.href = '../index.html';
+    }
 }
 
 // Redirects

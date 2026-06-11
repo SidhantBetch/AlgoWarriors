@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set Profile Data
     try {
         const user = JSON.parse(localStorage.getItem('aw_user'));
-        if(user && user.name) {
-            document.getElementById('profileName').innerText = user.name;
-            document.getElementById('profileInitials').innerText = user.name.charAt(0).toUpperCase();
+        const profileNameEl = document.getElementById('profileName');
+        const profileInitialsEl = document.getElementById('profileInitials');
+        if (user && user.name && profileNameEl && profileInitialsEl) {
+            profileNameEl.innerText = user.name;
+            profileInitialsEl.innerText = user.name.charAt(0).toUpperCase();
         }
     } catch(e) {}
 
